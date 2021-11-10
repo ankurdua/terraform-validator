@@ -18,7 +18,7 @@ The first step in determining if a GCP resource is supported is to figure out th
 
 A resource is "supported" by terraform-validator if it has an entry in [`converters/google/resources/resource_converters.go`](https://github.com/GoogleCloudPlatform/terraform-validator/blob/main/converters/google/resources/resource_converters.go). For example, you could search resource_converters.go for [`google_compute_disk`](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_disk) to see if that resource is supported.
 
-Adding support for a resource has four steps:
+Adding support for a resource has three steps:
 
 1. Make changes to [Magic Modules](https://github.com/GoogleCloudPlatform/magic-modules) to add or modify resource conversion code. Run [Magic Modules generation](https://github.com/GoogleCloudPlatform/magic-modules/#generating-terraform-validator) to update your local terraform validator.
 2. Add tests for the new resource to terraform-validator.
@@ -134,6 +134,6 @@ Now [run your tests](./index.md#testing) and make sure they pass locally before 
 
 Now that you have your code working locally, open PRs for [Magic Modules](https://github.com/GoogleCloudPlatform/magic-modules) and terraform-validator.
 
-For the Magic Modules PR, the most important check is `terraform-validator-test` - the other checks only matter if you're also making changes to the terraform provider. 
+For the Magic Modules PR, the most important check is `terraform-validator-test` - the other checks only matter if you're also making changes to the terraform provider.
 
 If any of the checks on your terraform validator PR are failing, make sure you can run the unit and integration tests successfully locally.
