@@ -1,10 +1,10 @@
 resource "google_cloud_run_service" "default" {
     name     = "tf-test-cloudrun-srv-beep"
     location = "us-central1"
-    project  = "scottsuarez-graphite"
+    project  = "{{.Provider.project}}"
 
     metadata {
-      namespace = "scottsuarez-graphite"
+      namespace = "{{.Provider.project}}"
     }
 
     template {
@@ -19,10 +19,10 @@ resource "google_cloud_run_service" "default" {
 resource "google_cloud_run_domain_mapping" "default" {
   location = "us-central1"
   name     = "tf-test-domain-meep.gcp.tfacc.hashicorptest.com"
-  project  = "scottsuarez-graphite"
+  project  = "{{.Provider.project}}"
 
   metadata {
-    namespace = "scottsuarez-graphite"
+    namespace = "{{.Provider.project}}"
   }
 
   spec {

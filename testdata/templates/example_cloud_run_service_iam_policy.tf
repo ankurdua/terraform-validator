@@ -1,7 +1,7 @@
 resource "google_cloud_run_service" "default" {
   name     = "tf-test-cloudrun-srv-policy"
   location = "us-central1"
-  project  = "scottsuarez-graphite"
+  project  = "{{.Provider.project}}"
 
   template {
     spec {

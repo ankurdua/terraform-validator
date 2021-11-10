@@ -1,14 +1,14 @@
 # provider "google" {
-#   project="scottsuarez-graphite"
+#   project="{{.Provider.project}}"
 # }
 
 resource "google_cloud_run_service" "default" {
   name     = "cloudrun-to-get-cai"
   location = "us-central1"
-  project="scottsuarez-graphite"
+  project="{{.Provider.project}}"
 
   metadata {
-  namespace = "scottsuarez-graphite"
+  namespace = "{{.Provider.project}}"
   annotations = {
       generated-by = "magic-modules"
     }
