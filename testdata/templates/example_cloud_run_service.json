@@ -5,7 +5,7 @@
     "ancestry_path": "organization/{{.OrgID}}/folder/{{.FolderID}}/project/{{.Provider.project}}",
     "resource": {
       "version": "run.googleapis.com",
-      "discovery_document_uri": "https://www.googleapis.com/discovery/v1/apis/run/run.googleapis.com/rest",
+      "discovery_document_uri": "https://www.googleapis.com/discovery/v1/apis/run/v1/rest",
       "discovery_name": "Service",
       "parent": "//cloudresourcemanager.googleapis.com/projects/{{.Provider.project}}",
       "data": {
