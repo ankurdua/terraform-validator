@@ -99,8 +99,8 @@ func GetCloudRunServiceCaiObject(d TerraformResourceData, config *Config) ([]Ass
 			Name: name,
 			Type: CloudRunServiceAssetType,
 			Resource: &AssetResource{
-				Version:              "run.googleapis.com",
-				DiscoveryDocumentURI: "https://www.googleapis.com/discovery/v1/apis/run/run.googleapis.com/rest",
+				Version:              "v1",
+				DiscoveryDocumentURI: "https://www.googleapis.com/discovery/v1/apis/run/v1/rest",
 				DiscoveryName:        "Service",
 				Data:                 obj,
 			},

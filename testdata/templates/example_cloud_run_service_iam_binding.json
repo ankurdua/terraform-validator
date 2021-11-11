@@ -1,1 +1,52 @@
-[{"name":"//run.googleapis.com/projects/{{.Provider.project}}/locations/us-central1/services","asset_type":"run.googleapis.com/Service","ancestry_path":"organization/529579013760/project/{{.Provider.project}}","resource":{"version":"run.googleapis.com","discovery_document_uri":"https://www.googleapis.com/discovery/v1/apis/run/run.googleapis.com/rest","discovery_name":"Service","parent":"//cloudresourcemanager.googleapis.com/projects/{{.Provider.project}}","data":{"apiVersion":"serving.knative.dev/v1","kind":"Service","metadata":{"name":"tf-test-cloudrun-srv-binding"},"spec":{"template":{"spec":{"containers":[{"image":"us-docker.pkg.dev/cloudrun/container/hello"}]}},"traffic":[{"latestRevision":true,"percent":100}]}}}},{"name":"//run.googleapis.com/tf-test-cloudrun-srv-binding","asset_type":"run.googleapis.com/Service","ancestry_path":"organization/529579013760/project/{{.Provider.project}}","iam_policy":{"bindings":[{"role":"viewer","members":["user:admin@hashicorptest.com"]}]}}]
+[
+  {
+    "name": "//run.googleapis.com/projects/{{.Provider.project}}/locations/us-central1/services/tf-test-cloudrun-srv-binding",
+    "asset_type": "run.googleapis.com/Service",
+    "ancestry_path": "organization/529579013760/project/{{.Provider.project}}",
+    "resource": {
+      "version": "run.googleapis.com",
+      "discovery_document_uri": "https://www.googleapis.com/discovery/v1/apis/run/run.googleapis.com/rest",
+      "discovery_name": "Service",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/{{.Provider.project}}",
+      "data": {
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "tf-test-cloudrun-srv-binding"
+        },
+        "spec": {
+          "template": {
+            "spec": {
+              "containers": [
+                {
+                  "image": "us-docker.pkg.dev/cloudrun/container/hello"
+                }
+              ]
+            }
+          },
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "//run.googleapis.com/tf-test-cloudrun-srv-binding",
+    "asset_type": "run.googleapis.com/Service",
+    "ancestry_path": "organization/529579013760/project/{{.Provider.project}}",
+    "iam_policy": {
+      "bindings": [
+        {
+          "role": "roles/viewer",
+          "members": [
+            "user:admin@hashicorptest.com"
+          ]
+        }
+      ]
+    }
+  }
+]

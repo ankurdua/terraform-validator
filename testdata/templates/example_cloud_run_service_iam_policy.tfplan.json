@@ -1,1 +1,298 @@
-{"format_version":"0.1","terraform_version":"0.13.4","planned_values":{"root_module":{"resources":[{"address":"google_cloud_run_service.default","mode":"managed","type":"google_cloud_run_service","name":"default","provider_name":"registry.terraform.io/hashicorp/google","schema_version":1,"values":{"autogenerate_revision_name":false,"location":"us-central1","name":"tf-test-cloudrun-srv-policy","project":"{{.Provider.project}}","template":[{"spec":[{"containers":[{"args":null,"command":null,"env":[],"env_from":[],"image":"us-docker.pkg.dev/cloudrun/container/hello","working_dir":null}],"service_account_name":null}]}],"timeouts":null,"traffic":[{"latest_revision":true,"percent":100,"revision_name":null}]}},{"address":"google_cloud_run_service_iam_policy.foo","mode":"managed","type":"google_cloud_run_service_iam_policy","name":"foo","provider_name":"registry.terraform.io/hashicorp/google","schema_version":0,"values":{"location":"us-central1","policy_data":"{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}","project":"{{.Provider.project}}","service":"tf-test-cloudrun-srv-policy"}}]}},"resource_changes":[{"address":"google_cloud_run_service.default","mode":"managed","type":"google_cloud_run_service","name":"default","provider_name":"registry.terraform.io/hashicorp/google","change":{"actions":["create"],"before":null,"after":{"autogenerate_revision_name":false,"location":"us-central1","name":"tf-test-cloudrun-srv-policy","project":"{{.Provider.project}}","template":[{"spec":[{"containers":[{"args":null,"command":null,"env":[],"env_from":[],"image":"us-docker.pkg.dev/cloudrun/container/hello","working_dir":null}],"service_account_name":null}]}],"timeouts":null,"traffic":[{"latest_revision":true,"percent":100,"revision_name":null}]},"after_unknown":{"id":true,"metadata":true,"status":true,"template":[{"metadata":true,"spec":[{"container_concurrency":true,"containers":[{"env":[],"env_from":[],"ports":true,"resources":true}],"serving_state":true,"timeout_seconds":true}]}],"traffic":[{}]}}},{"address":"google_cloud_run_service_iam_policy.foo","mode":"managed","type":"google_cloud_run_service_iam_policy","name":"foo","provider_name":"registry.terraform.io/hashicorp/google","change":{"actions":["create"],"before":null,"after":{"location":"us-central1","policy_data":"{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}","project":"{{.Provider.project}}","service":"tf-test-cloudrun-srv-policy"},"after_unknown":{"etag":true,"id":true}}}],"prior_state":{"format_version":"0.1","terraform_version":"0.13.4","values":{"root_module":{"resources":[{"address":"data.google_iam_policy.foo","mode":"data","type":"google_iam_policy","name":"foo","provider_name":"registry.terraform.io/hashicorp/google","schema_version":0,"values":{"audit_config":null,"binding":[{"condition":[],"members":["user:admin@hashicorptest.com"],"role":"viewer"}],"id":"909181109","policy_data":"{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}"}}]}}},"configuration":{"root_module":{"resources":[{"address":"google_cloud_run_service.default","mode":"managed","type":"google_cloud_run_service","name":"default","provider_config_key":"google","expressions":{"location":{"constant_value":"us-central1"},"name":{"constant_value":"tf-test-cloudrun-srv-policy"},"project":{"constant_value":"{{.Provider.project}}"},"template":[{"spec":[{"containers":[{"image":{"constant_value":"us-docker.pkg.dev/cloudrun/container/hello"}}]}]}],"traffic":[{"latest_revision":{"constant_value":true},"percent":{"constant_value":100}}]},"schema_version":1},{"address":"google_cloud_run_service_iam_policy.foo","mode":"managed","type":"google_cloud_run_service_iam_policy","name":"foo","provider_config_key":"google","expressions":{"location":{"references":["google_cloud_run_service.default"]},"policy_data":{"references":["data.google_iam_policy.foo"]},"project":{"references":["google_cloud_run_service.default"]},"service":{"references":["google_cloud_run_service.default"]}},"schema_version":0},{"address":"data.google_iam_policy.foo","mode":"data","type":"google_iam_policy","name":"foo","provider_config_key":"google","expressions":{"binding":[{"members":{"constant_value":["user:admin@hashicorptest.com"]},"role":{"constant_value":"viewer"}}]},"schema_version":0}]}}}
+{
+  "format_version": "0.1",
+  "terraform_version": "0.13.4",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "google_cloud_run_service.default",
+          "mode": "managed",
+          "type": "google_cloud_run_service",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/google",
+          "schema_version": 1,
+          "values": {
+            "autogenerate_revision_name": false,
+            "location": "us-central1",
+            "name": "tf-test-cloudrun-srv-policy",
+            "project": "{{.Provider.project}}",
+            "template": [
+              {
+                "spec": [
+                  {
+                    "containers": [
+                      {
+                        "args": null,
+                        "command": null,
+                        "env": [],
+                        "env_from": [],
+                        "image": "us-docker.pkg.dev/cloudrun/container/hello",
+                        "working_dir": null
+                      }
+                    ],
+                    "service_account_name": null
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "traffic": [
+              {
+                "latest_revision": true,
+                "percent": 100,
+                "revision_name": null
+              }
+            ]
+          }
+        },
+        {
+          "address": "google_cloud_run_service_iam_policy.foo",
+          "mode": "managed",
+          "type": "google_cloud_run_service_iam_policy",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/google",
+          "schema_version": 0,
+          "values": {
+            "location": "us-central1",
+            "policy_data": "{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}",
+            "project": "{{.Provider.project}}",
+            "service": "tf-test-cloudrun-srv-policy"
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "google_cloud_run_service.default",
+      "mode": "managed",
+      "type": "google_cloud_run_service",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/google",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "autogenerate_revision_name": false,
+          "location": "us-central1",
+          "name": "tf-test-cloudrun-srv-policy",
+          "project": "{{.Provider.project}}",
+          "template": [
+            {
+              "spec": [
+                {
+                  "containers": [
+                    {
+                      "args": null,
+                      "command": null,
+                      "env": [],
+                      "env_from": [],
+                      "image": "us-docker.pkg.dev/cloudrun/container/hello",
+                      "working_dir": null
+                    }
+                  ],
+                  "service_account_name": null
+                }
+              ]
+            }
+          ],
+          "timeouts": null,
+          "traffic": [
+            {
+              "latest_revision": true,
+              "percent": 100,
+              "revision_name": null
+            }
+          ]
+        },
+        "after_unknown": {
+          "id": true,
+          "metadata": true,
+          "status": true,
+          "template": [
+            {
+              "metadata": true,
+              "spec": [
+                {
+                  "container_concurrency": true,
+                  "containers": [
+                    {
+                      "env": [],
+                      "env_from": [],
+                      "ports": true,
+                      "resources": true
+                    }
+                  ],
+                  "serving_state": true,
+                  "timeout_seconds": true
+                }
+              ]
+            }
+          ],
+          "traffic": [
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "address": "google_cloud_run_service_iam_policy.foo",
+      "mode": "managed",
+      "type": "google_cloud_run_service_iam_policy",
+      "name": "foo",
+      "provider_name": "registry.terraform.io/hashicorp/google",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "location": "us-central1",
+          "policy_data": "{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}",
+          "project": "{{.Provider.project}}",
+          "service": "tf-test-cloudrun-srv-policy"
+        },
+        "after_unknown": {
+          "etag": true,
+          "id": true
+        }
+      }
+    }
+  ],
+  "prior_state": {
+    "format_version": "0.1",
+    "terraform_version": "0.13.4",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "data.google_iam_policy.foo",
+            "mode": "data",
+            "type": "google_iam_policy",
+            "name": "foo",
+            "provider_name": "registry.terraform.io/hashicorp/google",
+            "schema_version": 0,
+            "values": {
+              "audit_config": null,
+              "binding": [
+                {
+                  "condition": [],
+                  "members": [
+                    "user:admin@hashicorptest.com"
+                  ],
+                  "role": "viewer"
+                }
+              ],
+              "id": "909181109",
+              "policy_data": "{\"bindings\":[{\"members\":[\"user:admin@hashicorptest.com\"],\"role\":\"viewer\"}]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "google_cloud_run_service.default",
+          "mode": "managed",
+          "type": "google_cloud_run_service",
+          "name": "default",
+          "provider_config_key": "google",
+          "expressions": {
+            "location": {
+              "constant_value": "us-central1"
+            },
+            "name": {
+              "constant_value": "tf-test-cloudrun-srv-policy"
+            },
+            "project": {
+              "constant_value": "{{.Provider.project}}"
+            },
+            "template": [
+              {
+                "spec": [
+                  {
+                    "containers": [
+                      {
+                        "image": {
+                          "constant_value": "us-docker.pkg.dev/cloudrun/container/hello"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "traffic": [
+              {
+                "latest_revision": {
+                  "constant_value": true
+                },
+                "percent": {
+                  "constant_value": 100
+                }
+              }
+            ]
+          },
+          "schema_version": 1
+        },
+        {
+          "address": "google_cloud_run_service_iam_policy.foo",
+          "mode": "managed",
+          "type": "google_cloud_run_service_iam_policy",
+          "name": "foo",
+          "provider_config_key": "google",
+          "expressions": {
+            "location": {
+              "references": [
+                "google_cloud_run_service.default"
+              ]
+            },
+            "policy_data": {
+              "references": [
+                "data.google_iam_policy.foo"
+              ]
+            },
+            "project": {
+              "references": [
+                "google_cloud_run_service.default"
+              ]
+            },
+            "service": {
+              "references": [
+                "google_cloud_run_service.default"
+              ]
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "data.google_iam_policy.foo",
+          "mode": "data",
+          "type": "google_iam_policy",
+          "name": "foo",
+          "provider_config_key": "google",
+          "expressions": {
+            "binding": [
+              {
+                "members": {
+                  "constant_value": [
+                    "user:admin@hashicorptest.com"
+                  ]
+                },
+                "role": {
+                  "constant_value": "viewer"
+                }
+              }
+            ]
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  }
+}

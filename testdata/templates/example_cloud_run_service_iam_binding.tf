@@ -50,6 +50,6 @@ resource "google_cloud_run_service_iam_binding" "foo" {
   location = google_cloud_run_service.default.location
   project = google_cloud_run_service.default.project
   service = google_cloud_run_service.default.name
-  role = "viewer"
+  role = "roles/viewer"
   members = ["user:admin@hashicorptest.com"]
 }
