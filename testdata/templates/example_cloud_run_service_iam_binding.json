@@ -2,7 +2,7 @@
   {
     "name": "//run.googleapis.com/projects/{{.Provider.project}}/locations/us-central1/services/tf-test-cloudrun-srv-binding",
     "asset_type": "run.googleapis.com/Service",
-    "ancestry_path": "organization/529579013760/project/{{.Provider.project}}",
+    "ancestry_path": "organization/{{.OrgID}}/folder/{{.FolderID}}/project/{{.Provider.project}}",
     "resource": {
       "version": "run.googleapis.com",
       "discovery_document_uri": "https://www.googleapis.com/discovery/v1/apis/run/run.googleapis.com/rest",
@@ -37,7 +37,7 @@
   {
     "name": "//run.googleapis.com/tf-test-cloudrun-srv-binding",
     "asset_type": "run.googleapis.com/Service",
-    "ancestry_path": "organization/529579013760/project/{{.Provider.project}}",
+    "ancestry_path": "organization/{{.OrgID}}/folder/{{.FolderID}}/project/{{.Provider.project}}",
     "iam_policy": {
       "bindings": [
         {
